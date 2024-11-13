@@ -96,6 +96,8 @@ section {
 footer {
     background: #707070;
     grid-area: footer;
+
+    
     font-size: small;
     text-align: center;
 }
