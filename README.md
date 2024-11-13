@@ -46,3 +46,56 @@ BERIKUT KODE YANG TELAH DIPERBAIKI
 
 
 ## Semantic HTML Project Style.css ##
+Codingan ini terdapat beberapa kesalahan yaitu
+
+1.Redundansi Aturan body:
+Terdapat dua blok body yang mendefinisikan grid, grid-template-areas, grid-template-rows, dan grid-template-columns. Ini menyebabkan kode menjadi tidak efisien dan membingungkan.
+Perbaikan: Gabungkan aturan CSS body ke dalam satu blok untuk menghindari duplikasi.
+
+2.Aturan header, nav, section, footer Terduplikasi:
+Sama halnya dengan body, terdapat dua blok CSS yang mendefinisikan padding untuk header, nav, section, dan footer. Ini seharusnya digabung agar lebih ringkas.
+Perbaikan: Gabungkan kedua blok header, nav, section, footer menjadi satu.
+
+3.Kesalahan Penulisan dan Pengaturan Tambahan yang Tidak Perlu:
+Dalam grid-template-areas, terdapat area section yang dituliskan dua kali dalam satu baris. Ini mungkin diinginkan untuk dua kolom pada grid, namun pastikan layoutnya sesuai dengan yang diinginkan.
+
+## berikut codingan yang telah diperbaiki
+body {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "nav section section"
+        "footer footer footer";
+    grid-template-rows: 80px 1fr 50px;
+    grid-template-columns: 20% 1fr 18%;
+    grid-gap: 5px;
+    height: 100vh;
+    margin: 10px;
+}
+
+header, nav, section, footer {
+    padding: 5px;
+}
+
+nav {
+    background: #C9BFBF;
+    grid-area: nav;
+}
+
+header {
+    background: #707070;
+    grid-area: header;
+    text-align: center;
+}
+
+section {
+    background: #ABABAB;
+    grid-area: section;
+}
+
+footer {
+    background: #707070;
+    grid-area: footer;
+    font-size: small;
+    text-align: center;
+}
